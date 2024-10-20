@@ -1,5 +1,6 @@
 class Solution {
     public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) return "";
         String longest = "";
         for(int i = 0 ; i < strs[0].length(); i++){
             char currentChar = strs[0].charAt(i);
@@ -10,8 +11,25 @@ class Solution {
             }
             longest += currentChar;
         }
-        
-        // System.out.println(longest);
         return longest;
     }
 }
+
+/* 0ms
+public class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) return "";
+
+        String prefix = strs[0];
+
+        for (int i=0;i<strs.length;i++)
+        {
+            while (strs[i].indexOf(prefix) != 0)
+            {
+                prefix = prefix.substring(0, prefix.length() - 1);
+            }
+        }
+        return prefix;
+    }
+}
+*/
