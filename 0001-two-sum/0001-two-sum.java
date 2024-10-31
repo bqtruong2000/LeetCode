@@ -8,6 +8,6 @@ class Solution {
             int n = target - nums[i];
             if(map.containsKey(n) && i != map.get(n))  return new int[] {i, map.get(n)};
         }
-        throw new IllegalArgumentException("No two sum solution");
+        return new int[]{};
     }
 }
